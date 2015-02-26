@@ -31,7 +31,6 @@
 		.building {
 			.inner {
 
-
 				.name {
 					span {
 						font-family: $sansSerifStrong;
@@ -47,6 +46,13 @@
 					}
 				}
 
+				.cost {
+					span {
+						font-family: $sansSerifStrong;
+						@include adjust-font-size-to($s3);
+					}
+				}
+
 				@include trailing-border();
 				border-color: #e2e2df;
 				border-width: 1px;
@@ -55,3 +61,29 @@
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

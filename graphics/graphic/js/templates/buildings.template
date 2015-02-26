@@ -20,6 +20,8 @@
 				</div>
 			<% } %>
 
+			<div class='cost'><span>Cost: $2B</span></div>
+
 			<% if (building.comment && building.comment.length) { %>
 				<div class='comment'>
 					<span><%= building.comment %></span>
