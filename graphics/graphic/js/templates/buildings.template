@@ -1,0 +1,21 @@
+<ul>
+
+<% buildings.forEach(function(building) { %>
+
+	<li>
+		<p><%= building.Name %></p>
+		<p><%= building['Square feet'] %> square feet</p>
+		<p><%= building.comment %></p>
+
+		<img src='<%= building.image %>' />
+
+		<% if (building.mapUrl) { %>
+			<img src='<%= building.mapUrl %>' />
+		<% } %>
+
+
+	</li>
+
+<% }); %>
+
+</ul>

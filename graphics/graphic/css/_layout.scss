@@ -4,5 +4,30 @@
 	.subhed {
 		display: none;
 	}
+
+	.content {
+		ul {
+			width: 100%;
+			overflow: hidden;
+
+			li {
+				display: inline-block;
+				float: left;
+
+				width: 100%;
+				@include breakpoint(640px) {
+					width: 50%;
+				}
+				@include breakpoint(810px) {
+					width: 33.3%;
+				}
+				@include breakpoint(1330px) {
+					width: 25%;
+				}
+				padding: 1em;
+				border: solid black 1px;
+			}
+		}
+	}
 	
 }
