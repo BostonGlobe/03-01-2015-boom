@@ -1,21 +1,32 @@
-<ul>
-
+<div class='sizer'></div>
+<div class='gutter'></div>
 <% buildings.forEach(function(building) { %>
 
-	<li>
-		<p><%= building.Name %></p>
-		<p><%= building['Square feet'] %> square feet</p>
-		<p><%= building.comment %></p>
+	<div class='building'>
+		<div class='inner'>
+			<div class='name'>
+				<span><%= building.Name %></span>
+			</div>
 
-		<img src='<%= building.image %>' />
+			<% if (building.image) { %>
+				<div class='image'>
+					<img src='<%= building.image %>' />
+				</div>
+			<% } %>
 
-		<% if (building.mapUrl) { %>
-			<img src='<%= building.mapUrl %>' />
-		<% } %>
+			<% if (building.mapUrl) { %>
+				<div class='map'>
+					<img src='<%= building.mapUrl %>' />
+				</div>
+			<% } %>
 
+			<% if (building.comment && building.comment.length) { %>
+				<div class='comment'>
+					<span><%= building.comment %></span>
+				</div>
+			<% } %>
+		</div>
 
-	</li>
+	</div>
 
 <% }); %>
-
-</ul>

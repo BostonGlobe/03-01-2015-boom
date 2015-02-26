@@ -1,6 +1,8 @@
 {
   "name": "03-01-2015-boom",
   "version": "0.0.0",
-  "dependencies": {}
+  "dependencies": {
+    "imagesloaded": "~3.1.8",
+    "masonry": "~3.2.2"
+  }
 }
-

@@ -1,33 +1,57 @@
 .igraphic-graphic.graphic {
 	
-	.hed,
-	.subhed {
-		display: none;
-	}
+	.buildings {
 
-	.content {
-		ul {
+		width: 100%;
+
+		.sizer,
+		.building {
 			width: 100%;
-			overflow: hidden;
 
-			li {
-				display: inline-block;
-				float: left;
+			@include breakpoint(640px) {
+				width: 47.5%; // (100-5*1)/2
+			}
 
-				width: 100%;
-				@include breakpoint(640px) {
-					width: 50%;
+			@include breakpoint(810px) {
+				width: 30%; // (100-5*2)/3
+			}
+
+			@include breakpoint(1330px) {
+				width: 21.25%; // (100-5*3)/4
+			}
+		}
+
+		.gutter {
+			width: 0;
+			@include breakpoint(640px) {
+				width: 5%;
+			}
+		}
+
+		.building {
+			.inner {
+
+
+				.name {
+					span {
+						font-family: $sansSerifStrong;
+						@include adjust-font-size-to($s5);
+						@include adjust-leading-to(1);
+					}
 				}
-				@include breakpoint(810px) {
-					width: 33.3%;
+
+				.comment {
+					span {
+						font-family: $sansSerif;
+						@include adjust-font-size-to($s3p5);
+					}
 				}
-				@include breakpoint(1330px) {
-					width: 25%;
-				}
-				padding: 1em;
-				border: solid black 1px;
+
+				@include trailing-border();
+				border-color: #e2e2df;
+				border-width: 1px;
+				@include rhythm(0, 0, 1, 2);
 			}
 		}
 	}
-	
 }
