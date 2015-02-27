@@ -1,5 +1,12 @@
 .igraphic-graphic.graphic {
 
+	.buildings-container {
+		max-width: 1290px;
+		// background: grey;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 	.buildings {
 
 		width: 100%;
@@ -8,11 +15,15 @@
 		margin-right: auto;
 
 		.building {
-			width: 260px;
+			width: 300px;
 		}
 
 		.building {
 			.inner {
+
+				.map img {
+					width: 100%;
+				}
 
 				.name {
 					span {

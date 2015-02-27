@@ -9,7 +9,8 @@ Please note: do not reproduce Boston Globe logos or fonts without written permis
 - write hed and subhed
 - fix twitter/facebook icons
 - write "last updated by"
-- see about doing 4 columns
+- replace private with cache (in image link)
+- when updating data, check images are in MWB
 
 
 - TEST on various browsers

@@ -13,7 +13,7 @@ buildings.forEach(function(building) { %>
 
 			<% if (building.image) { %>
 				<div class='image'>
-					<img src='<%= building.image %>' />
+					<img src='<%= building.image.replace(/image_371w/, 'image_460w') %>' />
 				</div>
 			<% } %>
 

@@ -20,7 +20,7 @@ var data = _.chain(require('../../../data/data.json'))
 		if (v.Longitude && v.Longitude.length && v.Latitude && v.Latitude.length) {
 
 			lonlat = [v.Longitude, v.Latitude].join(',');
-			mapUrl = 'http://cache.boston.com/multimedia/graphics/projectFiles/2015/01skyline/img/' + util.hashifyLonLat(lonlat) + '.png';
+			mapUrl = 'http://private.boston.com/multimedia/graphics/projectFiles/2015/01skyline/img/' + util.hashifyLonLat(lonlat) + '.png';
 		}
 
 		return {
@@ -47,6 +47,6 @@ $('.buildings', master)
 		var msnry = new Masonry(document.querySelector('.igraphic-graphic.graphic .buildings'), {
 			itemSelector: '.building',
 			isFitWidth: true,
-			gutter: 20
+			gutter: 30
 		});
 	});

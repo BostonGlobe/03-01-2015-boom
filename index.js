@@ -15,7 +15,7 @@ json.filter(function(v) {
 
 	var lonlat = [v.Longitude, v.Latitude].join(',');
 
-	var url = 'http://api.tiles.mapbox.com/v4/gabriel-florit.e222ba6f/pin-l-commercial+464646(' + lonlat + ')/' + lonlat + ',14/260x161.png?access_token=pk.eyJ1IjoiZ2FicmllbC1mbG9yaXQiLCJhIjoiVldqX21RVSJ9.Udl7GDHMsMh8EcMpxIr2gA';
+	var url = 'http://api.tiles.mapbox.com/v4/gabriel-florit.e222ba6f/pin-l-commercial+464646(' + lonlat + ')/' + lonlat + ',14/300x185.png?access_token=pk.eyJ1IjoiZ2FicmllbC1mbG9yaXQiLCJhIjoiVldqX21RVSJ9.Udl7GDHMsMh8EcMpxIr2gA';
 	var filename = util.hashifyLonLat(lonlat);
 	var command = 'curl "' + url + '" > data/' + filename + '.png;';
 
