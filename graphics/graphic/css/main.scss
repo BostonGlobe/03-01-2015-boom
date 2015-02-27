@@ -5,11 +5,20 @@
 @import "common/css/_type";
 @import "graphics/graphic/css/_layout";
 
-
-
-
 %centercolumn {
 	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	@include breakpoint(640px) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+%largecolumn {
+	max-width: 1232px;
 	margin-left: auto;
 	margin-right: auto;
 	padding-left: 0.5em;

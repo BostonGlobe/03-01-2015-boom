@@ -1,6 +1,10 @@
 .igraphic-graphic.graphic {
-	
+
 	.buildings {
+
+		@extend %largecolumn;
+
+		max-width: 1232px;
 
 		width: 100%;
 
