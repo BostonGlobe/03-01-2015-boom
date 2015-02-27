@@ -8,7 +8,6 @@ Please note: do not reproduce Boston Globe logos or fonts without written permis
 
 - write hed and subhed
 - fix twitter/facebook icons
-- get correct source from bennie.
 - write "last updated by"
 - see about doing 4 columns
 
