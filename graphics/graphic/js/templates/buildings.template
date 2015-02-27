@@ -8,7 +8,7 @@ buildings.forEach(function(building, index) { %>
 	<div class='building'>
 		<div class='inner'>
 			<div class='name'>
-				<span><%= building.line_number %> <%= building.name %></span>
+				<span><%= building.name %></span>
 			</div>
 
 			<% if (building.image) { %>
