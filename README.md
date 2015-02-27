@@ -4,6 +4,15 @@ This project was generated with [generator-globeproject](https://github.com/Bost
 
 Please note: do not reproduce Boston Globe logos or fonts without written permission.
 
+## TODO
+
+- write hed and subhed
+- fix twitter/facebook icons
+- make sure photos are correct in the spreadsheet. if methode link, make it image_371w. otherwise, MAKE IT a methode link.
+- publish and sent to copy desk
+- curl mapbox photos
+- use csvcut to extract only the info we need
+
 ## Install
 
 - `npm install`
