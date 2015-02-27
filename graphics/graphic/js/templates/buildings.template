@@ -23,23 +23,30 @@ buildings.forEach(function(building) { %>
 				</div>
 			<% } %>
 
-			<% if (building.cost) { %>
-				<div class='cost'>
-					<span>Cost: $<%= Humanize.compactInteger(building.cost) %></span>
-				</div>
-			<% } %>
-
 			<% if (building.size) { %>
 				<div class='size'>
 					<span>Square feet: <%= util.numberWithCommas(building.size) %></span>
 				</div>
 			<% } %>
 
-			<% if (building.comment) { %>
-				<div class='comment'>
-					<span><%= building.comment %></span>
+			<% if (building.cost) { %>
+				<div class='cost'>
+					<span>Cost: $<%= Humanize.compactInteger(building.cost) %></span>
 				</div>
 			<% } %>
+
+			<% if (building.neighborhood) { %>
+				<div class='neighborhood'>
+					<span><%= building.neighborhood %></span>
+				</div>
+			<% } %>
+
+			<% if (building.comment) { %>
+				<div class='comment'>
+					<span><%= building.comment %></span><% if (building.storylink) { %><a class='storylink' href='<%= building.storylink %>'>read full story →</a><% } %>
+				</div>
+			<% } %>
+
 		</div>
 
 	</div>

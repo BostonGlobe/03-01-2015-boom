@@ -9,10 +9,10 @@ Please note: do not reproduce Boston Globe logos or fonts without written permis
 - write hed and subhed
 - fix twitter/facebook icons
 - get correct source from bennie.
-- make sure photos are correct in the spreadsheet. show to bennie in case he wants to tweak comment field. if methode link, make it image_371w. otherwise, MAKE IT a methode link.
-- publish and sent to copy desk
-- curl mapbox photos, then upload to cache
-- use csvcut to extract only the info we need
+- write "last updated by"
+- see about doing 4 columns
+
+
 - TEST on various browsers
 - try setting image height ahead of time.
 

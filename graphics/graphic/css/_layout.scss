@@ -43,6 +43,21 @@
 					}
 				}
 
+				.neighborhood {
+					span {
+						font-family: $sansSerifStrong;
+						@include adjust-font-size-to($s3);
+					}
+				}
+
+				a.storylink {
+					text-transform: uppercase;
+					font-family: $sansSerifStrong;
+					color: #59889d;
+					padding-left: 0.5em;
+					@include adjust-font-size-to($s3);
+				}
+
 				@include trailing-border();
 				border-color: #e2e2df;
 				border-width: 1px;
