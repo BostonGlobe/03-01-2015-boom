@@ -2,34 +2,13 @@
 
 	.buildings {
 
-		@extend %largecolumn;
-
-		max-width: 1232px;
-
 		width: 100%;
 
-		.sizer,
+		margin-left: auto;
+		margin-right: auto;
+
 		.building {
-			width: 100%;
-
-			@include breakpoint(640px) {
-				width: 47.5%; // (100-5*1)/2
-			}
-
-			@include breakpoint(810px) {
-				width: 30%; // (100-5*2)/3
-			}
-
-			@include breakpoint(1330px) {
-				width: 21.25%; // (100-5*3)/4
-			}
-		}
-
-		.gutter {
-			width: 0;
-			@include breakpoint(640px) {
-				width: 5%;
-			}
+			width: 260px;
 		}
 
 		.building {
@@ -51,6 +30,13 @@
 				}
 
 				.cost {
+					span {
+						font-family: $sansSerifStrong;
+						@include adjust-font-size-to($s3);
+					}
+				}
+
+				.size {
 					span {
 						font-family: $sansSerifStrong;
 						@include adjust-font-size-to($s3);

@@ -1,11 +1,14 @@
-<div class='sizer'></div>
-<div class='gutter'></div>
-<% buildings.forEach(function(building) { %>
+<%
+
+var util = require('../../../../common/js/util.js');
+var Humanize = require('humanize-plus');
+
+buildings.forEach(function(building) { %>
 
 	<div class='building'>
 		<div class='inner'>
 			<div class='name'>
-				<span><%= building.Name %></span>
+				<span><%= building.name %></span>
 			</div>
 
 			<% if (building.image) { %>
@@ -20,9 +23,19 @@
 				</div>
 			<% } %>
 
-			<div class='cost'><span>Cost: $2B</span></div>
+			<% if (building.cost) { %>
+				<div class='cost'>
+					<span>Cost: $<%= Humanize.compactInteger(building.cost) %></span>
+				</div>
+			<% } %>
 
-			<% if (building.comment && building.comment.length) { %>
+			<% if (building.size) { %>
+				<div class='size'>
+					<span>Square feet: <%= util.numberWithCommas(building.size) %></span>
+				</div>
+			<% } %>
+
+			<% if (building.comment) { %>
 				<div class='comment'>
 					<span><%= building.comment %></span>
 				</div>
