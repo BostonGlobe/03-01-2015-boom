@@ -10,8 +10,10 @@ Please note: do not reproduce Boston Globe logos or fonts without written permis
 - fix twitter/facebook icons
 - make sure photos are correct in the spreadsheet. if methode link, make it image_371w. otherwise, MAKE IT a methode link.
 - publish and sent to copy desk
-- curl mapbox photos
+- curl mapbox photos, then upload to cache
 - use csvcut to extract only the info we need
+- TEST on various browsers
+- try setting image height ahead of time.
 
 ## Install
 

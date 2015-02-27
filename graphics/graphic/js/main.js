@@ -1,6 +1,7 @@
 var master = $('.igraphic-graphic.graphic');
 var Masonry = require('masonry');
 var imagesLoaded = require('imagesloaded');
+var util = require('../../../common/js/util.js');
 
 function toNumber(s) {
 
@@ -17,7 +18,9 @@ var data = _.chain(require('../../../data/data.json'))
 		var mapUrl;
 
 		if (v.Longitude && v.Longitude.length && v.Latitude && v.Latitude.length) {
-			mapUrl = 'http://api.tiles.mapbox.com/v4/' + 'gabriel-florit.e222ba6f' + '/pin-l-commercial+464646(' + v.Longitude + ',' + v.Latitude + ')/' + v.Longitude + ',' + v.Latitude + ',14/260x161.png?access_token=pk.eyJ1IjoiZ2FicmllbC1mbG9yaXQiLCJhIjoiVldqX21RVSJ9.Udl7GDHMsMh8EcMpxIr2gA';
+
+			lonlat = [v.Longitude, v.Latitude].join(',');
+			mapUrl = '../../data/' + util.hashifyLonLat(lonlat) + '.png';
 		}
 
 		return {
