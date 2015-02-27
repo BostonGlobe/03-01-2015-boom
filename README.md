@@ -9,12 +9,17 @@ Please note: do not reproduce Boston Globe logos or fonts without written permis
 - write hed and subhed
 - fix twitter/facebook icons
 - write "last updated by"
-- replace private with cache (in image link)
-- when updating data, check images are in MWB
-
-
 - TEST on various browsers
-- try setting image height ahead of time.
+
+## UPDATING
+
+- Download spreadsheet as csv.
+- `make prepare file=<data.csv>`. This will create `data/data.json`.
+- `node index.js`. This will create the locator map pngs, and also create `data/dimensions.json`.
+- `cp data/locatormap_*.png /Volumes/www_html/multimedia/graphics/projectFiles/2015/01skyline/img`. This will copy locator map pngs to the private server.
+- Next, log in to prod and upload the locator map pngs.
+- Inspect the spreadsheet to make sure images are in methode, and that they're sized as `460w`.
+- If not, save them and upload them in this project's MWB directory. Publish.
 
 ## Install
 

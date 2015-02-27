@@ -27,6 +27,7 @@
     "gulp-util": "3.0.0",
     "gulp-webpack": "1.0.0",
     "http-rewrite-middleware": "0.1.6",
+    "image-size": "^0.3.5",
     "inquirer": "0.6.0",
     "js-yaml": "3.1.0",
     "json-loader": "0.5.1",

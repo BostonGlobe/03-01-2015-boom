@@ -3,23 +3,23 @@
 var util = require('../../../../common/js/util.js');
 var Humanize = require('humanize-plus');
 
-buildings.forEach(function(building) { %>
+buildings.forEach(function(building, index) { %>
 
 	<div class='building'>
 		<div class='inner'>
 			<div class='name'>
-				<span><%= building.name %></span>
+				<span><%= building.line_number %> <%= building.name %></span>
 			</div>
 
 			<% if (building.image) { %>
 				<div class='image'>
-					<img src='<%= building.image.replace(/image_371w/, 'image_460w') %>' />
+					<img width=<%= building.dimensions.width %> height=<%= building.dimensions.height %> src='<%= building.image %>' />
 				</div>
 			<% } %>
 
 			<% if (building.mapUrl) { %>
 				<div class='map'>
-					<img src='<%= building.mapUrl %>' />
+					<img width=300 height=185 src='<%= building.mapUrl %>' />
 				</div>
 			<% } %>
 
