@@ -1,8 +1,15 @@
 .igraphic-graphic.graphic {
 
+	.subhed .updated {
+		font-family: $sansSerif;
+		text-transform: uppercase;
+		@include adjust-font-size-to($s3);
+		padding-left: 0.5em;
+		color: #666;
+	}
+
 	.buildings-container {
 		max-width: 1290px;
-		// background: grey;
 		margin-left: auto;
 		margin-right: auto;
 	}
