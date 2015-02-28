@@ -29,7 +29,7 @@ var data = _.chain(require('../../../data/data.json'))
 
 		return {
 			line_number: v.line_number,
-			name: v.Name,
+			name: v.Name.replace(/'/g, '’'),
 			dimensions: dimensions ? dimensions : null,
 			neighborhood: v.Neighborhood && v.Neighborhood.length ? v.Neighborhood : null,
 			cost: toNumber(v.Cost),

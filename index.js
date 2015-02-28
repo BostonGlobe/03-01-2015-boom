@@ -30,13 +30,25 @@ var dimensions = json.filter(function(v) {
 
 }).map(function(v) {
 
-	var command = 'curl ' + v.image + ' > data/image_' + v.line_number + '.png;';
+	var command = 'curl "' + v.image + '" --globoff > data/image_' + v.line_number + '.png;';
 	exec(command);
 
-	var result = sizeOf('data/image_' + v.line_number + '.png');
-	result.line_number = v.line_number;
+	return v;
 
-	return result;
+}).map(function(v) {
+
+	try {
+		var result = sizeOf('data/image_' + v.line_number + '.png');
+		result.line_number = v.line_number;
+
+		return result;
+	} catch(e) {
+
+		console.log(e);
+		console.log(JSON.stringify(v, null, 4));
+
+	}
+
 });
 
 fs.writeFileSync('data/dimensions.json', JSON.stringify(dimensions, null, 4));
