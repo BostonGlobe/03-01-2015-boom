@@ -13,7 +13,7 @@ buildings.forEach(function(building, index) { %>
 
 			<% if (building.image) { %>
 				<div class='image'>
-					<img width=<%= building.dimensions.width %> height=<%= building.dimensions.height %> src='<%= building.image %>' />
+					<img width=300 height=<%= 300*building.dimensions.height/building.dimensions.width %> src='<%= building.image %>' />
 				</div>
 			<% } %>
 
