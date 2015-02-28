@@ -6,9 +6,6 @@ Please note: do not reproduce Boston Globe logos or fonts without written permis
 
 ## TODO
 
-- write hed and subhed
-- fix twitter/facebook icons
-- write "last updated by"
 - TEST on various browsers
 
 ## UPDATING
