@@ -6,7 +6,7 @@ var util = require('../../../common/js/util.js');
 function toNumber(s) {
 
 	var result = s && s.length ?
-		+(s.replace(/\$/g, '').replace(/,/g, '')) :
+		+(s.replace("$", '').replace(/,/g, '')) :
 		null;
 
 	return result;
