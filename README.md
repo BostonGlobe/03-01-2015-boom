@@ -4,9 +4,9 @@ This project was generated with [generator-globeproject](https://github.com/Bost
 
 Please note: do not reproduce Boston Globe logos or fonts without written permission.
 
-## TODO
+## Location
 
-- TEST on various browsers
+- /Boston/Content/Metro/WebGraphics/2015/03/01skyline/01skyline.jpt
 
 ## UPDATING
 
