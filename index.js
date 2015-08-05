@@ -1,6 +1,9 @@
+// this script needs to do:
+// 1 - download mapbox maps for each lat lng
+
 // read JSON provided
-var fs = require('fs');
-var shelljs  = require('shelljs/global');
+var fs = require('graceful-fs');
+var shelljs  = require('shelljs');
 var sizeOf = require('image-size');
 
 var file = fs.readFileSync('data/data.json', {encoding: 'utf8'});
@@ -8,11 +11,12 @@ var file = fs.readFileSync('data/data.json', {encoding: 'utf8'});
 var json = JSON.parse(file);
 var util = require('./common/js/util.js');
 
-json.filter(function(v) {
+// make script to download files
+fs.writeFileSync('data/downloadMaps.sh', json.filter(function(v) {
 
 	return v.Longitude && v.Longitude.length && v.Latitude && v.Latitude.length;
 
-}).forEach(function(v) {
+}).map(function(v) {
 
 	var lonlat = [v.Longitude, v.Latitude].join(',');
 
@@ -20,35 +24,41 @@ json.filter(function(v) {
 	var filename = 'locatormap_' + v.line_number + '.png';
 	var command = 'curl "' + url + '" > data/locatormap_' + v.line_number + '.png;';
 
-	exec(command);
+	return command;
+	// console.log(JSON.stringify(v, null, 4));
+	// shelljs.exec(command);
 
-});
+}).join('\n'));
+// var dimensions = json.filter(function(v) {
 
-var dimensions = json.filter(function(v) {
+// 	return v.image && v.image.length;
 
-	return v.image && v.image.length;
+// }).map(function(v) {
 
-}).map(function(v) {
+// 	var command = 'curl "' + v.image + '" --globoff > data/image_' + v.line_number + '.png;';
+// 	console.log(JSON.stringify(command, null, 4));
+// 	shelljs.exec(command, function (code, output) {
+// 		console.log(JSON.stringify(code, null, 4));
+// 		console.log(JSON.stringify(output, null, 4));
+// 	});
 
-	var command = 'curl "' + v.image + '" --globoff > data/image_' + v.line_number + '.png;';
-	exec(command);
+// 	return v;
 
-	return v;
+// }).map(function(v) {
 
-}).map(function(v) {
+// 	try {
+// 		var result = sizeOf('data/image_' + v.line_number + '.png');
+// 		result.line_number = v.line_number;
+// 		console.log(JSON.stringify(result, null, 4));
 
-	try {
-		var result = sizeOf('data/image_' + v.line_number + '.png');
-		result.line_number = v.line_number;
+// 		return result;
+// 	} catch(e) {
 
-		return result;
-	} catch(e) {
+// 		console.log(e);
+// 		console.log(JSON.stringify(v, null, 4));
 
-		console.log(e);
-		console.log(JSON.stringify(v, null, 4));
+// 	}
 
-	}
+// });
 
-});
-
-fs.writeFileSync('data/dimensions.json', JSON.stringify(dimensions, null, 4));
+// fs.writeFileSync('data/dimensions.json', JSON.stringify(dimensions, null, 4));
