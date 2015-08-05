@@ -10,5 +10,5 @@ data/03-01-2015-boom_files
 parts/globe
 graphics/graphic/js/templates/templates.js
 /libs
-data/data.json
 data/dimensions.json
+*.sw*
