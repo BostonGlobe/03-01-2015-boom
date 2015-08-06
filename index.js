@@ -1,6 +1,3 @@
-// this script needs to do:
-// 1 - download mapbox maps for each lat lng
-
 // read JSON provided
 var fs = require('graceful-fs');
 var shelljs  = require('shelljs');
@@ -9,9 +6,10 @@ var sizeOf = require('image-size');
 var file = fs.readFileSync('data/data.json', {encoding: 'utf8'});
 
 var json = JSON.parse(file);
-var util = require('./common/js/util.js');
 
-// make script to download files
+
+
+// make script to download maps
 fs.writeFileSync('data/downloadMaps.sh', json.filter(function(v) {
 
 	return v.Longitude && v.Longitude.length && v.Latitude && v.Latitude.length;
@@ -25,17 +23,38 @@ fs.writeFileSync('data/downloadMaps.sh', json.filter(function(v) {
 	var command = 'curl "' + url + '" > data/locatormap_' + v.line_number + '.png;';
 
 	return command;
-	// console.log(JSON.stringify(v, null, 4));
-	// shelljs.exec(command);
 
 }).join('\n'));
+
+
+
+function hasImage(v) {
+
+	return v.image && v.image.length;
+}
+
+
+
+// make script to download photos
+fs.writeFileSync('data/downloadPhotos.sh', json.filter(hasImage).map(function(v){
+
+	var command = 'curl "' + v.image + '" --globoff > data/image_' + v.line_number + '.png;';
+	return command;
+
+}).join('\n'));
+
+
+
+// make script to make dimensions.json
+// we somehow have to gernate a csv or json of width,height,line_number for json datums with hasImage=true
+
+
+
 // var dimensions = json.filter(function(v) {
 
-// 	return v.image && v.image.length;
 
 // }).map(function(v) {
 
-// 	var command = 'curl "' + v.image + '" --globoff > data/image_' + v.line_number + '.png;';
 // 	console.log(JSON.stringify(command, null, 4));
 // 	shelljs.exec(command, function (code, output) {
 // 		console.log(JSON.stringify(code, null, 4));

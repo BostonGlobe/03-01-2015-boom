@@ -11,4 +11,5 @@ parts/globe
 graphics/graphic/js/templates/templates.js
 /libs
 data/dimensions.json
+data/*.png
 *.sw*
