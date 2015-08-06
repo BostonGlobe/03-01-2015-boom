@@ -22,7 +22,7 @@ var data = _.chain(require('../../../data/data.json'))
 		if (v.Longitude && v.Longitude.length && v.Latitude && v.Latitude.length) {
 
 			lonlat = [v.Longitude, v.Latitude].join(',');
-			mapUrl = 'http://private.boston.com/multimedia/graphics/projectFiles/2015/01skyline/img/locatormap_' + v.line_number + '.png';
+			mapUrl = 'http://cache.boston.com/multimedia/graphics/projectFiles/2015/01skyline/img/locatormap_' + v.line_number + '.png';
 		}
 
 		var dimensions = _.find(allDimensions, {filename: 'data/image_' + v.line_number + '.png'});
