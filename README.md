@@ -11,9 +11,7 @@ Please note: do not reproduce Boston Globe logos or fonts without written permis
 ## UPDATING
 
 - Download [spreadsheet](https://docs.google.com/spreadsheets/d/1nEdM8hiFbzCIjrP3Hz3mt7GYVuYsnMlR2sisRgujczQ/edit#gid=1992656729) as csv.
-- `make prepare file=<data.csv>`. This will create `data/data.json`.
-- `node index.js`. This will create the locator map pngs, and also create `data/dimensions.json`.
-- `cp data/locatormap_*.png /Volumes/www_html/multimedia/graphics/projectFiles/2015/01skyline/img`. This will copy locator map pngs to the private server.
+- `make all`
 - Next, log in to prod and upload the locator map pngs.
 - Inspect the spreadsheet to make sure images are in methode, and that they're sized as `460w`.
 - If not, save them and upload them in this project's MWB directory. Publish.
