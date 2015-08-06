@@ -12,7 +12,7 @@ function toNumber(s) {
 	return result;
 }
 
-var allDimensions = require('../../../data/dimensions.json');
+var allDimensions = require('../../../data/dimensions.csv');
 
 var data = _.chain(require('../../../data/data.json'))
 	.map(function(v, i) {
@@ -22,12 +22,13 @@ var data = _.chain(require('../../../data/data.json'))
 		if (v.Longitude && v.Longitude.length && v.Latitude && v.Latitude.length) {
 
 			lonlat = [v.Longitude, v.Latitude].join(',');
-			mapUrl = 'http://cache.boston.com/multimedia/graphics/projectFiles/2015/01skyline/img/locatormap_' + v.line_number + '.png';
+			mapUrl = 'http://private.boston.com/multimedia/graphics/projectFiles/2015/01skyline/img/locatormap_' + v.line_number + '.png';
 		}
 
-		var dimensions = _.find(allDimensions, {line_number: v.line_number});
+		var dimensions = _.find(allDimensions, {filename: 'data/image_' + v.line_number + '.png'});
 
 		return {
+			status: v.Status,
 			line_number: v.line_number,
 			name: v.Name.replace(/'/g, '’'),
 			dimensions: dimensions ? dimensions : null,

@@ -11,4 +11,4 @@ R_deploy:
 
 prepare:
 
-	csvcut "${file}" -l -c Name,Neighborhood,Cost,"Square feet",Longitude,Latitude,image,comment,storylink | csvjson > data/data.json
+	csvcut "${file}" -l -c Status,Name,Neighborhood,Cost,"Square feet",Longitude,Latitude,image,comment,storylink | csvjson > data/data.json

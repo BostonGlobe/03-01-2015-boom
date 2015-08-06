@@ -2,10 +2,10 @@
 
 images=data/image*.png
 
-echo 'filename, width, height';
+echo 'filename,width,height';
 
 for i in $images
 do
-	dimensions=$(identify -format '%w, %h' $i);
-	echo $i', '$dimensions;
+	dimensions=$(identify -format '%w,%h' $i);
+	echo $i','$dimensions;
 done

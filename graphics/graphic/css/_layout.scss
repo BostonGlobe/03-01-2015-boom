@@ -43,27 +43,25 @@
 					}
 				}
 
-				.cost {
+				.cost,.size,.neighborhood,.status {
 					span {
 						font-family: $sansSerifStrong;
 						@include adjust-font-size-to($s3);
 					}
 				}
 
-				.size {
-					span {
-						font-family: $sansSerifStrong;
-						@include adjust-font-size-to($s3);
+				.twoThings {
+					width: 100%;
+					overflow: hidden;
+
+					div:nth-child(1) {
+						float: left;
+					}
+
+					div:nth-child(2) {
+						float: right;
 					}
 				}
-
-				.neighborhood {
-					span {
-						font-family: $sansSerifStrong;
-						@include adjust-font-size-to($s3);
-					}
-				}
-
 				a.storylink {
 					text-transform: uppercase;
 					font-family: $sansSerifStrong;
